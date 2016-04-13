@@ -28,16 +28,16 @@ def message(secret, nombre):
         return 1
     else: return 2
 
-def aléat(level):
+def aleat(level):
     return random.randint(0,level)
 
 def liste_mensonge(taux_mensonge):
     B, k = [], 0
     A = [False for i in range(100)]
     while k <= taux_mensonge:
-        aléat_mensonge = random.randint(0,100)
-        if B.count(aléat_mensonge) == 0:
-            B += [aléat_mensonge]
+        aleat_mensonge = random.randint(0,99)
+        if B.count(aleat_mensonge) == 0:
+            B += [aleat_mensonge]
             A[aléat_mensonge] = True
             k += 1
         else:
