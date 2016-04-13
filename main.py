@@ -10,9 +10,10 @@ import time
 # nombre = 40
 # mentir = True
 # message = 42
-def reponse(message, mentir):
+def reponse(message, mentir, i):
     if message == 42:
-        print("Bravo tu as réussi")
+        print("Bravo tu as réussi en {0}".format(i))
+        return
     elif message == 1 and mentir == True:  ## 1 == trop grand
         print("nombre petit, recommence cela ne fait que la {0} fois que tu recommence".format(i))
     elif message == 1 and mentir == False:  ## 1 == trop grand
@@ -61,4 +62,19 @@ def exponentiation_rapide(x, n):
 def mentir(A, t):
     a = random.randint(0, 99)
     t1 = (time.perf_counter() - t) * exponentiation_rapide(10, 16) + a
-    p = t1 % len(A)
+    p = int(t1 % len(A))
+    print(p)
+    return A[p]
+
+def jeux():
+    SECRET = aleat(100)
+    A = liste_mensonge(random.randint(0,100))
+    i = 1
+    while True:
+        t = time.perf_counter()
+        nbr_joueur = int(input())
+        reponse(message(SECRET, nbr_joueur),mentir(A, t), i)
+        i += 1
+
+jeux()
+
