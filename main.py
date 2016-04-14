@@ -59,7 +59,6 @@ def mentir(A, t):
     a = random.randint(0, 99)
     t1 = (time.perf_counter() - t) * exponentiation_rapide(10, 16) + a
     p = int(t1 % len(A))
-    print(p)
     return A[p]
 
 
