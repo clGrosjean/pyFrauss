@@ -84,7 +84,6 @@ def jeux():
         " <Le mode de jeux: solo>\n\nMerci de choisir le niveau d'indication sur le taux de mensonge:\nTaper 0 pour aucune indication\nTaper 1 pour avoir une petite indication\nTaper 2 pour avoir le taux précis\n")
     niveau_indication = int(input())
     SECRET = aleat(100)
-    print("{0}".format(SECRET))
     A, i, r = liste_mensonge(random.randint(0, 100), niveau_indication), 1, 0
     print("Début du jeu\n")
     temps_de_partie = time.perf_counter()
