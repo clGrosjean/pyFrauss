@@ -1,19 +1,21 @@
 import tkinter
 
 
-
 class Menubar():
     def __init__(self, windows):
-        menuBar = tkinter.Menu(windows, selectcolor='blue')
+        self.windows = windows
+
+    def initMenu(self):
+        menuBar = tkinter.Menu(self.windows, selectcolor='blue')
 
         menuJeux = tkinter.Menu(menuBar, tearoff=1, bg='red')
-        menuJeux.add_command(label="Jeu 1",command= self.cake)
-        menuJeux.add_command(label="Jeu 2",command= self.cake)
+        menuJeux.add_command(label="Jeu 1", command=self.cake)
+        menuJeux.add_command(label="Jeu 2", command=self.cake)
         menuJeux_1 = tkinter.Menu(menuJeux)
         menuJeux_1.add_command(label="cake", command=self.cake)
         menuJeux.add_cascade(label="Cake", menu=menuJeux_1)
         menuJeux.add_separator()
-        menuJeux.add_command(label="Quitter", command= self.undisplay)
+        menuJeux.add_command(label="Quitter", command=self.undisplay)
         menuBar.add_cascade(label="jeux", menu=menuJeux)
 
         menuParam = tkinter.Menu(menuBar, title='Paramètres', tearoff=0)
@@ -29,15 +31,16 @@ class Menubar():
 
         # menuAide = tkinter.Menu(menuBar, title='Aide', tearoff=0)
 
-        windows.config(menu=menuBar)
+        self.windows.config(menu=menuBar)
+
     def cake(self):
         print("cake")
 
     def undisplay(self):
-        windows.destroy()
+        self.windows.destroy()
 
     def display(self):
-        windows.mainloop()
+        self.windows.mainloop()
 
     def pleinEcran(self):
-        windows.attributes('-fullscreen',1)
+        self.windows.attributes('-fullscreen', 1)
