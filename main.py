@@ -3,7 +3,6 @@
 import random
 import time
 
-
 def reponse(message, mentir, i, temps_de_partie):
     if message == 42:
         print("Bravo tu as réussi en {0} essai et tu as mis {1} secondes".format(i, int(
