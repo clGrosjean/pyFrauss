@@ -34,7 +34,7 @@ class Menubar():
         self.windows.config(menu=menuBar)
 
     def cake(self):
-        print("cake")
+        print("the cake is a lie")
 
     def undisplay(self):
         self.windows.destroy()
