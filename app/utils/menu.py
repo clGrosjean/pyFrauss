@@ -2,13 +2,14 @@ import tkinter
 
 
 class Menubar():
-    def __init__(self, windows):
+    def __init__(self, windows, color):
         self.windows = windows
+        self.color = color
 
     def initMenu(self):
         menuBar = tkinter.Menu(self.windows, selectcolor='blue')
 
-        menuJeux = tkinter.Menu(menuBar, tearoff=1, bg='red')
+        menuJeux = tkinter.Menu(menuBar, tearoff=1, bg=self.color)
         menuJeux.add_command(label="Jeu 1", command=self.cake)
         menuJeux.add_command(label="Jeu 2", command=self.cake)
         menuJeux_1 = tkinter.Menu(menuJeux)
