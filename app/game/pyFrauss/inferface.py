@@ -6,6 +6,7 @@ from app.utils import menu
 class Interface(tkinter.Frame):
     def __init__(self, windows, **kwargs):
         tkinter.Frame.__init__(self, windows, bg='black', width=800, height=600, relief=tkinter.SUNKEN, **kwargs)
+        windows['bg']='black'
         self.pack(fill=tkinter.BOTH)
         self.initWidget()
         menu.Menubar.initMenu(menu.Menubar(windows, 'red'))
